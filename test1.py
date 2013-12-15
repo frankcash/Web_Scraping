@@ -11,7 +11,7 @@ soup = BeautifulSoup(content)
 for link in soup.find_all('a'):
     print(link.get('href'))#displays the URLS
     
-
+print(soup.title.string)#reads the title
 print(soup.find_all(text=re.compile(lookingFor)))#will display everything inolving python
 
 
