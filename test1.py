@@ -9,10 +9,13 @@ lookingFor = raw_input("what are you looking for?\n")
 url = urlInput
 content = urllib2.urlopen(url).read()
 soup = BeautifulSoup(content)
+print("The title of this page is "+soup.title.string+"\n")#reads the title
+print ("This page links to:\n")
 for link in soup.find_all('a'):
     print(link.get('href'))#displays the URLS
+
     
-print(soup.title.string)#reads the title
+print ("\n")
 
 print(soup.find_all(text=re.compile(lookingFor)))#will display everything inolving python
 
