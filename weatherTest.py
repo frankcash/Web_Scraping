@@ -7,25 +7,31 @@ weather = pywapi.get_weather_from_weather_com(location)
 
 displayTempIn=displayTempIn.lower()#converts to lower case to prevent any errors from occuring
 
+    # following code converts temperature from C to F
+def CtoF(weather):
+    temp = weather['current_conditions']['temperature']
+    FTemp=int(float(temp)) # Converting from string to int to do math
+    FTemp=FTemp*9
+    FTemp=FTemp/5
+    Ftemp=FTemp+32
+    F=Ftemp
+    fahren=str(F) #converts from int to str so it can be output
+    return fahren
+CtoF(weather)
 
-# following code converts temperature from C to F
-temp = weather['current_conditions']['temperature']
-FTemp=int(float(temp)) # Converting from string to int to do math
-FTemp=FTemp*9
-FTemp=FTemp/5
-Ftemp=FTemp+32
-F=Ftemp
-fahren=str(F) #converts from int to str so it can be output
+def displayResults(fahren, weather):
+    print("Outside Conditions Appear To Be "+weather['current_conditions']['text'])#tells current conditions
+    if displayTempIn == "celsius":
+        print("The Temperature Is "+weather['current_conditions']['temperature']+u"\N{DEGREE SIGN}"+"C")#tells temperature in celsius
+    elif displayTempIn == "fahrenheit":
+        print("The Temperature Is "+fahren+u"\N{DEGREE SIGN}"+"F")#tells temperature in fahrenheit
+    else:  #if response was incromprehensible the display will default to both fahrenheit and celsius
+        print("The Temperature Is "+weather['current_conditions']['temperature']+u"\N{DEGREE SIGN}"+"C")#tells temperature in celsius
+        print("The Temperature Is "+fahren+u"\N{DEGREE SIGN}"+"F")#tells temerature in fahrenheit
+    print("Last Updated At "+weather['current_conditions']['last_updated'])#prints when last updated
+displayResults(fahren, weather)
 
-print("Outside Conditions Appear To Be "+weather['current_conditions']['text'])#tells current conditions
-if displayTempIn == "celsius":
-    print("The Temperature Is "+weather['current_conditions']['temperature']+u"\N{DEGREE SIGN}"+"C")#tells temperature in celsius
-elif displayTempIn == "fahrenheit":
-    print("The Temperature Is "+fahren+u"\N{DEGREE SIGN}"+"F")#tells temerature in fahrenheit
-else:  #if response was incromprehensible the display will default to both fahrenheit and celsius
-    print("The Temperature Is "+weather['current_conditions']['temperature']+u"\N{DEGREE SIGN}"+"C")#tells temperature in celsius
-    print("The Temperature Is "+fahren+u"\N{DEGREE SIGN}"+"F")#tells temerature in fahrenheit
-print("Last Updated At "+weather['current_conditions']['last_updated'])#prints when last updated
+
 
 #speed=weather['current_conditions']['wind']['speed']#gets the wind speed
 
