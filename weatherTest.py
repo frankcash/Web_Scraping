@@ -1,12 +1,15 @@
 #Generates Weather conditions utilizing the Python-Weather-API
-import pywapi, pprint, string, time
-location = raw_input("Which ZIP code would you like to know the weather for? \n")
-displayTempIn = raw_input("Would you like the Temperature to be displayed in Celsius or Fahrenheit? \n")
-pp = pprint.PrettyPrinter(indent=4)
-weather = pywapi.get_weather_from_yahoo(location)
-
-displayTempIn=displayTempIn.lower()#converts to lower case to prevent any errors from occuring
-
+def usrInput():
+    global weather
+    global displayTempIn
+    import pywapi, pprint, string, time
+    location = raw_input("Which ZIP code would you like to know the weather for? \n")
+    displayTempIn = raw_input("Would you like the Temperature to be displayed in Celsius or Fahrenheit? \n")
+    p = pprint.PrettyPrinter(indent=4)
+    weather = pywapi.get_weather_from_yahoo(location)
+    displayTempIn=displayTempIn.lower()#converts to lower case to prevent any errors from occuring
+    return weather;
+usrInput()
     # following code converts temperature from C to F
 
 def CtoF(weather):
