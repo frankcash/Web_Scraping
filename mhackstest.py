@@ -4,7 +4,7 @@ start = default_timer()
 duration = default_timer()-start
 minutes=duration/60
 
-print "Welcome to BrowseScape.."
+print "Welcome to BrowseScrape.."
 print "Current commands include weather, wikipedia, search, and exit."
 
 
