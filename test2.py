@@ -9,4 +9,4 @@ with Browser() as browser:
     button = browser.find_by_name('submit')
     #interact with elements
     button.click()
-    raw_input("")#gives a way for me to observe
+    raw_input("") #gives a way for me to observe

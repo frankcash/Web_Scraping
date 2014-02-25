@@ -4,11 +4,11 @@ Personal project based upon web scraping that I am working on.  To act as a web 
 
 
 -------------------------------------------------------------
-<<<<<<< HEAD
+
 The required librarys and APIs are easily installed via pip.
-=======
+
 The required librarys and APIs are easily installed via pip
->>>>>>> 6e985bc02d53e75a305050709effb3846b44dc9c
+
 
 Requires BeautifulSoup4
 
@@ -21,5 +21,4 @@ Requires Wikipedia API https://github.com/goldsmith/Wikipedia
 -------------------------------------------------------------
 
 Code written for testing can be given upon further notice.
-=======
->>>>>>> 6e985bc02d53e75a305050709effb3846b44dc9c
+

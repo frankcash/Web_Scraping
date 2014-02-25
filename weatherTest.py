@@ -7,7 +7,7 @@ def usrInput():
     displayTempIn = raw_input("Would you like the Temperature to be displayed in Celsius or Fahrenheit? \n")
     p = pprint.PrettyPrinter(indent=4)
     weather = pywapi.get_weather_from_yahoo(location)
-    displayTempIn=displayTempIn.lower()#converts to lower case to prevent any errors from occuring
+    displayTempIn=displayTempIn.lower() #converts to lower case to prevent any errors from occuring
     return weather;
 usrInput()
     # following code converts temperature from C to F
@@ -15,10 +15,8 @@ usrInput()
 def CtoF(weather):
     global ftemp #declares ftemp to be a global variable
     temp = weather['condition']['temp']
-    FTemp=int(float(temp)) # Converting from string to int to do math
-    FTemp=FTemp*9
-    FTemp=FTemp/5
-    Ftemp=FTemp+32
+    FTemp=int(float(temp)) #Converting from string to int to do math
+    FTemp=((FTemp*9)/5)+2
     F=Ftemp
     ftemp=str(F) #converts from int to str so it can be output
     return;
